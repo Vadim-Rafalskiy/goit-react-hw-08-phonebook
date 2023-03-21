@@ -1,38 +1,28 @@
-// import { Outlet, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-// import { useSelector } from 'react-redux';
+import AuthLayout from './AuthLayout/AuthLayout';
+import NavBar from 'components/NavBar/NavBar';
+import UserRoutes from 'components/UserRoutes/UserRoutes';
 
-// import { getFilteredContacts } from '../redux/contacts/contacts-selectors';
+import { store, persistor } from '../redux/store';
 
-// import ContactList from './ContactList/ContactList';
-// import PhoneBookFilter from './PhoneBookFilter/PhoneBookFilter';
-import PhoneBookForm from './PhoneBookForm/PhoneBookForm';
-// import ContactsPage from './Pages/ContactsPage/ContactsPage'; //---------------------------------
-
-import styles from './App.module.scss';
+// import styles from './App.module.scss';
 
 const App = () => {
-  // const filteredContacts = useSelector(getFilteredContacts);
-  // const isContacts = Boolean(filteredContacts.length);
-
   return (
-    <>
-      {/* <div className={styles.wrapper}> */}
-
-      <PhoneBookForm />
-
-      {/* <ContactsPage /> */}
-      {/* </div> */}
-    </>
-
-    // {/* <Link to={'contacts'}>Contacts page</Link>
-    // <Outlet /> */}
-    // {/* <div className={styles.block}>
-    //   <h2 className={styles.title}>Contacts</h2>
-    //   <PhoneBookFilter />
-    //   <ContactList />
-    //   {!isContacts && <p>Contacts list is empty!</p>}
-    // </div> */}
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {/* <BrowserRouter basename="goit-react-hw-08-phonebook"> */}
+        <AuthLayout>
+          <BrowserRouter>
+            <NavBar />
+            <UserRoutes />
+          </BrowserRouter>
+        </AuthLayout>
+      </PersistGate>
+    </Provider>
   );
 };
 
