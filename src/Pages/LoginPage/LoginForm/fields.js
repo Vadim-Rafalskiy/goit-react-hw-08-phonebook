@@ -4,14 +4,12 @@ const fields = {
     name: 'email',
     required: true,
     label: 'Email',
-    placeholder: 'Email',
   },
   password: {
     type: 'password',
     name: 'password',
     required: true,
     label: 'Password',
-    placeholder: 'Password',
   },
 };
 

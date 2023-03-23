@@ -10,8 +10,6 @@ const LoginPage = lazy(() => import('../../Pages/LoginPage/LoginPage'));
 const RegisterPage = lazy(() => import('../../Pages/RegisterPage/RegisterPage'));
 const NotFoundPage = lazy(() => import('../../Pages/NotFoundPage/NotFoundPage'));
 
-// import LoginPage from '../Pages/LoginPage/LoginPage';
-
 const UserRoutes = () => {
   return (
     <Suspense fallback={<p>...loading</p>}>

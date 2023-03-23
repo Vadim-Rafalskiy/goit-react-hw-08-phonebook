@@ -1,5 +1,5 @@
-import TextField from '../../../shared/components/TextField/TextField';
-import Button from 'shared/components/Button/Button';
+import BasicButtons from 'shared/components/BasicButtons/BasicButtons';
+import TextFieldMui from 'shared/components/TextFieldMui/TextFieldMui';
 
 import useForm from '../../../shared/hooks/useForm';
 
@@ -14,9 +14,9 @@ const PhoneBookForm = ({ onSubmit }) => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <TextField value={name} handleChange={handleChange} {...fields.name} />
-      <TextField value={number} handleChange={handleChange} {...fields.number} />
-      <Button>Add contact</Button>
+      <TextFieldMui value={name} handleChange={handleChange} {...fields.name} />
+      <TextFieldMui value={number} handleChange={handleChange} {...fields.number} />
+      <BasicButtons>Add contact</BasicButtons>
     </form>
   );
 };

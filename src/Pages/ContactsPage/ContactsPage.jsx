@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import { getFilteredContacts } from '../../redux/contacts/contacts-selectors';
 import { fetchAddContact } from 'redux/contacts/contacts-operation';
-// import { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
 
 import PhoneBookForm from './PhoneBookForm/PhoneBookForm';
@@ -19,20 +19,10 @@ const ContactsPage = () => {
 
   const handleSubmit = data => {
     dispatch(fetchAddContact(data));
-    // setState(initialState);
   };
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   const { name, number } = state;
-
-  //   dispatch(fetchAddContact({ name, number }));
-  //   setState(initialState);
-  // };
-
   return (
     <>
-      <div className={styles.block}>
-        <h2 className={styles.title}>Contacts</h2>
+      <div className={styles.container}>
         <PhoneBookForm onSubmit={handleSubmit} />
         <PhoneBookFilter />
         <ContactList />

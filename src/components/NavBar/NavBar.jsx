@@ -15,7 +15,6 @@ const NavBar = () => {
     <>
       <div className={styles.navWrapper}>
         <Logo />
-
         {!isLogin && <NavbarAuth />}
         {isLogin && <NavbarUser />}
       </div>

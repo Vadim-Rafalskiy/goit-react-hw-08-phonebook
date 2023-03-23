@@ -1,6 +1,6 @@
-import TextField from '../../../shared/components/TextField/TextField';
-import Button from '../../../shared/components/Button/Button';
+import TextFieldMui from 'shared/components/TextFieldMui/TextFieldMui';
 
+import BasicButtons from '../../../shared/components/BasicButtons/BasicButtons';
 import useForm from '../../../shared/hooks/useForm';
 
 import fields from './fields';
@@ -14,9 +14,9 @@ const LoginForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <TextField value={email} handleChange={handleChange} {...fields.email} />
-      <TextField value={password} handleChange={handleChange} {...fields.password} />
-      <Button>Login</Button>
+      <TextFieldMui value={email} handleChange={handleChange} {...fields.email} />
+      <TextFieldMui value={password} handleChange={handleChange} {...fields.password} />
+      <BasicButtons>Login</BasicButtons>
     </form>
   );
 };

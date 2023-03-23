@@ -3,9 +3,6 @@ import { nanoid } from 'nanoid';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-// import ContactItem from 'components/ContactItem/ContactItem';
-
-// import { fetchDeleteContact } from 'redux/contacts/contacts-operation';
 import { fetchDeleteContact } from '../../../redux/contacts/contacts-operation';
 import { getFilteredContacts } from '../../../redux/contacts/contacts-selectors';
 import { fetchAllContacts } from '../../../redux/contacts/contacts-operation';
@@ -26,16 +23,17 @@ const ContactList = () => {
 
   const elements = contacts.map(({ id, name, number }) => (
     <li key={nanoid()} className={styles.contactItem}>
-      {name}: {number}
-      <button className={styles.btnDelete} onClick={() => handleDeleteContact(id)} type="button">
-        Delete
-      </button>
+      <div>{name}</div>
+      <div>{number}</div>
+      <div>
+        <button className={styles.btnDelete} onClick={() => handleDeleteContact(id)} type="button">
+          Delete
+        </button>
+      </div>
     </li>
-
-    // <ContactItem  contact={contact} />
   ));
 
-  return <ul>{elements}</ul>;
+  return <ul className={styles.contactList}>{elements}</ul>;
 };
 
 export default ContactList;
